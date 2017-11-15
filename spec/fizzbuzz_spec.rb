@@ -1,18 +1,31 @@
-require "fizzbuzz"
-describe "fizzbuzz" do
-  it "return 'fizz' when passed 3" do
-    expect(fizzbuzz(3)).to eq "fizz"
-  end
-  it "return 'buzz' when passed 5" do
-    expect(fizzbuzz(5)).to eq "buzz"
-  end
-  it "return 'fizzbuzz' when passed 15" do
-    expect(fizzbuzz(15).to eq "fizzbuzz")
-  end
-  it "return '8' when passed 8" do
-    expect(fizzbuzz(8).to eq "8")
-  end
-  it "return '0' when passed 0" do
-    expect(fizzbuzz(0). to eq "8")
+require 'fizzbuzz'
+
+describe 'fizzbuzz' do
+  test_values = [
+    {
+      input_val: 0,
+      expected_value: '0'
+    },
+    {
+      input_val: 3,
+      expected_value: 'Fizz'
+    },
+    {
+      input_val: 5,
+      expected_value: 'Buzz'
+    },
+    {
+      input_val: 15,
+      expected_value: 'Fizzbuzz'
+    },
+    {
+      input_val: 1,
+      expected_value: '1'
+    }
+  ]
+  test_values.each do |test_data|
+    it "returns #{test_data[:expected_value]} when passed #{test_data[:input_val]}" do
+      expect(test_data[:input_val].fizzbuzz).to eq test_data[:expected_value]
+    end
   end
 end
